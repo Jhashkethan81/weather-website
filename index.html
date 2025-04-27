@@ -3,19 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Forecast</title>
-  <link rel="stylesheet" href="style.css">  <!-- Linking CSS -->
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="weather-container">
-    <h1>Weather Forecast</h1>
+  <div id="app">
+    <header>
+      <h1>Weather App</h1>
+      <button id="theme-toggle">Switch to Dark Mode</button>
+    </header>
 
-    <input type="text" id="cityInput" placeholder="Enter city name">
-    <button onclick="getWeather()">Get Weather</button>
+    <main>
+      <div class="input-container">
+        <label for="cityInput">Enter city name: </label>
+        <input type="text" id="cityInput" placeholder="e.g. London">
+        <button onclick="getWeather()">Get Weather</button>
+      </div>
 
-    <div id="weatherResult"></div> <!-- Weather data will show here -->
+      <div id="loader">Loading...</div>
+      <div id="weatherResult"></div>
+
+      <div id="chartSection">
+        <canvas id="weatherChart" width="400" height="200"></canvas>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Weather App - Created by G N P Jhashkethan</p>
+    </footer>
   </div>
-
-  <script src="app.js"></script> <!-- Linking JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
